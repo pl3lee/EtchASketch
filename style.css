@@ -13,7 +13,7 @@ body {
 .grid-container {
     display: flex;
     flex: 1;
-    width: 100vh;
+    width: 120vh;
     border: solid #f4d47c;
     border-radius: 10px;
     background-color: #E0FFFF;
@@ -38,7 +38,26 @@ body {
     width: 100vh; 
     display: flex;
 }
-
+.main-section {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+}
+.sidebar-container {
+    display: flex;
+    flex: 1;
+    width: 20vh;
+    border: solid #f4d47c;
+    border-radius: 10px;
+    background-color: white;
+    border-width: thick;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.colors-container {
+    display: flex;
+}
 .gridBox {
     flex: 1; 
     border: solid #808080; 
