@@ -1,6 +1,3 @@
-* {
-    /* border: solid red; */
-}
 body {
     height: 100vh;
     background-color: #121212;
@@ -10,6 +7,7 @@ body {
     justify-content: space-between;
     font-family: "Roboto", "sans-serif", "Times New Roman";
 }
+
 .grid-container {
     display: flex;
     flex: 1;
@@ -19,6 +17,7 @@ body {
     background-color: #E0FFFF;
     border-width: thick;
 }
+
 .grid {
     display: flex;
     flex-direction: column;
@@ -26,6 +25,7 @@ body {
     align-items: flex-end;
     
 }
+
 .header {
     text-align: center;
     font-size: 50px;
@@ -38,11 +38,13 @@ body {
     width: 100vh; 
     display: flex;
 }
+
 .main-section {
     display: flex;
     flex: 1;
     gap: 20px;
 }
+
 .sidebar-container {
     display: flex;
     flex: 1;
@@ -55,15 +57,18 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
 .choose-color {
     font-size: 50px;
     font-weight: bold;
 }
+
 .colors-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .color-selector {
     width: 100px;
     height: 100px;
@@ -75,30 +80,39 @@ body {
 #blue.color-selector {
     background-color: blue;
 }
+
 #red.color-selector {
     background-color: red;
 }
+
 #yellow.color-selector {
     background-color: yellow;
 }
+
 #green.color-selector {
     background-color: green;
 }
+
 #black.color-selector {
     background-color: black;
 }
+
 #magenta.color-selector {
     background-color: magenta;
 }
+
 #orange.color-selector {
     background-color: orange;
 }
+
 #lime.color-selector {
     background-color: lime;
 }
+
 #purple.color-selector {
     background-color: purple;
 }
+
 .gridBox {
     flex: 1; 
     border: solid #808080; 
@@ -114,30 +128,39 @@ body {
 .gridBox.clicked-blue {
     background-color: blue;
 }
+
 .gridBox.clicked-red {
     background-color: red;
 }
+
 .gridBox.clicked-yellow {
     background-color: yellow;
 }
+
 .gridBox.clicked-green {
     background-color: green;
 }
+
 .gridBox.clicked-black {
     background-color: black;
 }
+
 .gridBox.clicked-magenta {
     background-color: magenta;
 }
+
 .gridBox.clicked-orange {
     background-color: orange;
 }
+
 .gridBox.clicked-lime {
     background-color: lime;
 }
+
 .gridBox.clicked-purple {
     background-color: purple;
 }
+
 .reset {
     width: 200px;
     height: 50px;

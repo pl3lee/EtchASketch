@@ -24,9 +24,11 @@ function addMouseDown() {
         drag = false;
     });
 }
+
 function removeColor(e) {
     colors.forEach(color => e.target.classList.remove(`clicked-${color}`));
 }
+
 function initializeColorSelectors() {
     colorSelectors.forEach(colorSelector => {
         colorSelector.addEventListener('click', function(e) {
@@ -37,6 +39,7 @@ function initializeColorSelectors() {
         })
     })
 }
+
 function initializeDrawFunction() {
     gridBoxes.forEach(gridBox => {
         gridBox.addEventListener('mouseover', function(e) {
@@ -53,6 +56,7 @@ function initializeDrawFunction() {
         });
     });
 }
+
 function initializeResetButtonFunction() {
     resetButton.addEventListener('click', function(e) {
         gridBoxes.forEach(gridBox => {
@@ -62,11 +66,13 @@ function initializeResetButtonFunction() {
         });
     });
 }
+
 function removeSelectorTransform() {
     colorSelectors.forEach(colorSelector => {
         colorSelector.classList.remove('selected');
     })
 }
+
 let colors = ["blue", "red", "yellow", "green", "black", "magenta", "orange", "lime", "purple"];
 let mouseDown = false;
 let currentColor = "black";
