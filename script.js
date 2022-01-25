@@ -16,7 +16,7 @@ function createGrid() {
 
 function addMouseDown() {
     document.addEventListener('mousedown', function(e) {
-        mouseDown = true
+        mouseDown = true;
         drag = false;
     });
     document.addEventListener('mouseup', function(e) {
@@ -35,28 +35,28 @@ function initializeColorSelectors() {
             currentColor = e.target.id;
             console.log(currentColor);
             removeSelectorTransform();
-            e.target.classList.add('selected')
-        })
-    })
+            e.target.classList.add('selected');
+        });
+    });
 }
 
 function initializeEraserFunction() {
     eraser.addEventListener('click', function(e) {
         eraser.classList.add('selected');
-    })
+    });
 }
 
 function initializeDrawFunction() {
     gridBoxes.forEach(gridBox => {
         gridBox.addEventListener('mouseover', function(e) {
             if (mouseDown == true) {
-                removeColor(e)
+                removeColor(e);
                 gridBox.classList.add(`clicked-${currentColor}`);
             }
         });
         gridBox.addEventListener('click', function(e) {
-            console.log(e)
-            removeColor(e)
+            console.log(e);
+            removeColor(e);
             gridBox.classList.add(`clicked-${currentColor}`);
         });
     });
@@ -75,7 +75,7 @@ function initializeResetButtonFunction() {
 function removeSelectorTransform() {
     colorSelectors.forEach(colorSelector => {
         colorSelector.classList.remove('selected');
-    })
+    });
 }
 
 let colors = ["blue", "red", "yellow", "green", "black", "magenta", "orange", "lime", "purple", "white", "eraser"];
