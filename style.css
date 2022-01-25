@@ -50,3 +50,7 @@ body {
 .gridBox:hover {
     background-color: red;
 }
+
+.gridBox.clicked {
+    background-color: blue;
+}
