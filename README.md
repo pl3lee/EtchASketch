@@ -13,7 +13,7 @@ This is my second webpage created using HTML, CSS, and JavaScript. What it does 
 - When you draw, the pixel that you started with may not be colored (Not yet fixed)
 - If the mouse moves too quickly, there will be gaps in the drawing (Not yet fixed)
 # Task list
--[ ] Fix the above two things
--[ ] In addition to the preset colors, add a color picker so that a specific color can be picked.
--[ ] Undo button
--[ ] Button to change canvas color
+- [ ] Fix the above two things
+- [ ] In addition to the preset colors, add a color picker so that a specific color can be picked.
+- [ ] Undo button
+- [ ] Button to change canvas color
