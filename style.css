@@ -42,15 +42,26 @@ body {
 .gridBox {
     flex: 1; 
     border: solid #808080; 
-    border-width: 1px;
-    transition-duration: 0.5s;
+    border-width: 0px;
+    transition-duration: 0.25s;
     transition-timing-function: ease-out;
 }
 
 .gridBox:hover {
-    background-color: red;
+    background-color: lightskyblue;
 }
 
 .gridBox.clicked {
     background-color: blue;
+}
+
+.reset {
+    width: 200px;
+    height: 50px;
+    font-size: large;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: lightblue;
+    font-weight: bold;
+    background-color: #E0FFFF;
 }

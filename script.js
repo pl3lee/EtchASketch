@@ -1,10 +1,10 @@
 function createGrid() {
     const grid = document.querySelector('.grid');
     const rowArray = [];
-    for (let row = 0; row < 16; row++) {
+    for (let row = 0; row < 100; row++) {
         let gridRow = document.createElement('div');
         gridRow.classList.add('row');
-        for (let col = 0; col < 16; col++) {
+        for (let col = 0; col < 100; col++) {
             let gridElement = document.createElement('div');
             gridElement.classList.add('gridBox');
             gridElement.setAttribute('draggable', false);
@@ -37,15 +37,22 @@ document.addEventListener('mouseup', function(e) {
 })
 
 const gridBoxes = document.querySelectorAll('.gridBox');
-    gridBoxes.forEach(gridBox => {
-        gridBox.addEventListener('mouseover', function(e) {
-            // console.log(e)
-            if (mouseDown == true) {
-                gridBox.classList.add('clicked');
-            }
-        })
-        gridBox.addEventListener('click', function(e) {
+gridBoxes.forEach(gridBox => {
+    gridBox.addEventListener('mouseover', function(e) {
+        // console.log(e)
+        if (mouseDown == true) {
             gridBox.classList.add('clicked');
-        })
-        
+        }
     });
+    gridBox.addEventListener('click', function(e) {
+        gridBox.classList.add('clicked');
+    });
+});
+
+const resetButton = document.querySelector('.reset');
+resetButton.addEventListener('click', function(e) {
+    gridBoxes.forEach(gridBox => {
+        gridBox.classList.remove('clicked');
+    })
+})
+
