@@ -40,10 +40,15 @@ function initializeColorSelectors() {
     })
 }
 
+function initializeEraserFunction() {
+    eraser.addEventListener('click', function(e) {
+        eraser.classList.add('selected');
+    })
+}
+
 function initializeDrawFunction() {
     gridBoxes.forEach(gridBox => {
         gridBox.addEventListener('mouseover', function(e) {
-            // console.log(e);
             if (mouseDown == true) {
                 removeColor(e)
                 gridBox.classList.add(`clicked-${currentColor}`);
@@ -73,18 +78,21 @@ function removeSelectorTransform() {
     })
 }
 
-let colors = ["blue", "red", "yellow", "green", "black", "magenta", "orange", "lime", "purple"];
+let colors = ["blue", "red", "yellow", "green", "black", "magenta", "orange", "lime", "purple", "white", "eraser"];
 let mouseDown = false;
 let currentColor = "black";
+let eraserOn = false;
 const grid = document.querySelector('.grid');
 const resetButton = document.querySelector('.reset');
 const colorSelectors = document.querySelectorAll('.color-selector');
+const eraser = document.querySelector('#eraser.color-selector');
 createGrid();
 const gridBoxes = document.querySelectorAll('.gridBox');
 addMouseDown();
 initializeColorSelectors();
 initializeDrawFunction();
 initializeResetButtonFunction();
+initializeEraserFunction();
 
 
 
