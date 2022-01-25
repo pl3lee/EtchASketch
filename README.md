@@ -1,5 +1,6 @@
-# About The Project
+# About This Project
 ![image](https://user-images.githubusercontent.com/64212628/151052571-8c2d74c9-5e9a-487b-abe0-151dae4207eb.png)
+
 Try it out: https://pl3lee.github.io/EtchASketch/
 This is my second webpage created using HTML, CSS, and JavaScript. What it does is pretty self-explanatory, it is an Etch A Sketch board! However, it is no ordinary Etch A Sketch board, it has some functionalities that a regular board does not:
 - Multiple color options available
