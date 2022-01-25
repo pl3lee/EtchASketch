@@ -32,3 +32,21 @@ body {
     font-weight: bold;
     color: white;
 }
+
+.row {
+    flex: 1; 
+    width: 100vh; 
+    display: flex;
+}
+
+.gridBox {
+    flex: 1; 
+    border: solid #808080; 
+    border-width: 1px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.gridBox:hover {
+    background-color: red;
+}
