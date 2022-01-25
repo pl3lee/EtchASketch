@@ -1,5 +1,4 @@
 function createGrid() {
-    const grid = document.querySelector('.grid');
     const rowArray = [];
     for (let row = 0; row < 100; row++) {
         let gridRow = document.createElement('div');
@@ -8,7 +7,6 @@ function createGrid() {
             let gridElement = document.createElement('div');
             gridElement.classList.add('gridBox');
             gridElement.setAttribute('draggable', false);
-            // gridElement.addEventListener('', colorBoxes);
             gridRow.appendChild(gridElement);
         }
         rowArray.push(gridRow);
@@ -16,43 +14,75 @@ function createGrid() {
     rowArray.forEach(rowElement => grid.appendChild(rowElement));
 }
 
-function colorBoxes(e) {
-    console.log(e.target);
-    e.target.classList.add('clicked');
+function addMouseDown() {
+    document.addEventListener('mousedown', function(e) {
+        mouseDown = true
+        drag = false;
+    });
+    document.addEventListener('mouseup', function(e) {
+        mouseDown = false;
+        drag = false;
+    });
 }
-createGrid();
-// colorBoxes();
-
-let mouseDown = false;
-document.addEventListener('mousedown', function(e) {
-    
-    mouseDown = true
-    console.log(mouseDown)
-    drag = false;
-})
-document.addEventListener('mouseup', function(e) {
-    mouseDown = false;
-    console.log(mouseDown);
-    drag = false;
-})
-
-const gridBoxes = document.querySelectorAll('.gridBox');
-gridBoxes.forEach(gridBox => {
-    gridBox.addEventListener('mouseover', function(e) {
-        // console.log(e)
-        if (mouseDown == true) {
-            gridBox.classList.add('clicked');
-        }
-    });
-    gridBox.addEventListener('click', function(e) {
-        gridBox.classList.add('clicked');
-    });
-});
-
-const resetButton = document.querySelector('.reset');
-resetButton.addEventListener('click', function(e) {
-    gridBoxes.forEach(gridBox => {
-        gridBox.classList.remove('clicked');
+function removeColor(e) {
+    colors.forEach(color => e.target.classList.remove(`clicked-${color}`));
+}
+function initializeColorSelectors() {
+    colorSelectors.forEach(colorSelector => {
+        colorSelector.addEventListener('click', function(e) {
+            currentColor = e.target.id;
+            console.log(currentColor)
+        })
     })
-})
+}
+function initializeDrawFunction() {
+    gridBoxes.forEach(gridBox => {
+        gridBox.addEventListener('mouseover', function(e) {
+            // console.log(e);
+            if (mouseDown == true) {
+                removeColor(e)
+                gridBox.classList.add(`clicked-${currentColor}`);
+            }
+        });
+        gridBox.addEventListener('click', function(e) {
+            console.log(e)
+            removeColor(e)
+            gridBox.classList.add(`clicked-${currentColor}`);
+        });
+    });
+}
+function initializeResetButtonFunction() {
+    resetButton.addEventListener('click', function(e) {
+        gridBoxes.forEach(gridBox => {
+            colors.forEach(color => {
+                gridBox.classList.remove(`clicked-${color}`);
+            });
+        });
+    });
+}
+let colors = ["blue", "red", "yellow", "green", "black", "magenta"];
+let mouseDown = false;
+let currentColor = "black";
+const grid = document.querySelector('.grid');
+const resetButton = document.querySelector('.reset');
+const colorSelectors = document.querySelectorAll('.color-selector');
+createGrid();
+const gridBoxes = document.querySelectorAll('.gridBox');
+addMouseDown();
+initializeColorSelectors();
+initializeDrawFunction();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -51,12 +51,42 @@ body {
     border-radius: 10px;
     background-color: white;
     border-width: thick;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
+.choose-color {
+    font-size: 50px;
+    font-weight: bold;
+}
 .colors-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.color-selector {
+    width: 100px;
+    height: 100px;
+    border-width: 0px;
+}
+
+#blue.color-selector {
+    background-color: blue;
+}
+#red.color-selector {
+    background-color: red;
+}
+#yellow.color-selector {
+    background-color: yellow;
+}
+#green.color-selector {
+    background-color: green;
+}
+#black.color-selector {
+    background-color: black;
+}
+#magenta.color-selector {
+    background-color: magenta;
 }
 .gridBox {
     flex: 1; 
@@ -70,8 +100,23 @@ body {
     background-color: lightskyblue;
 }
 
-.gridBox.clicked {
+.gridBox.clicked-blue {
     background-color: blue;
+}
+.gridBox.clicked-red {
+    background-color: red;
+}
+.gridBox.clicked-yellow {
+    background-color: yellow;
+}
+.gridBox.clicked-green {
+    background-color: green;
+}
+.gridBox.clicked-black {
+    background-color: black;
+}
+.gridBox.clicked-magenta {
+    background-color: magenta;
 }
 
 .reset {
