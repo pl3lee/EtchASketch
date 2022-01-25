@@ -31,7 +31,9 @@ function initializeColorSelectors() {
     colorSelectors.forEach(colorSelector => {
         colorSelector.addEventListener('click', function(e) {
             currentColor = e.target.id;
-            console.log(currentColor)
+            console.log(currentColor);
+            removeSelectorTransform();
+            e.target.classList.add('selected')
         })
     })
 }
@@ -60,7 +62,12 @@ function initializeResetButtonFunction() {
         });
     });
 }
-let colors = ["blue", "red", "yellow", "green", "black", "magenta"];
+function removeSelectorTransform() {
+    colorSelectors.forEach(colorSelector => {
+        colorSelector.classList.remove('selected');
+    })
+}
+let colors = ["blue", "red", "yellow", "green", "black", "magenta", "orange", "lime", "purple"];
 let mouseDown = false;
 let currentColor = "black";
 const grid = document.querySelector('.grid');
@@ -71,6 +78,7 @@ const gridBoxes = document.querySelectorAll('.gridBox');
 addMouseDown();
 initializeColorSelectors();
 initializeDrawFunction();
+initializeResetButtonFunction();
 
 
 
